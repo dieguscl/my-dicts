@@ -35,10 +35,9 @@ class enfr_Cambridge {
 
     tags = elem.querySelectorAll("span");
     tags.forEach((x) => {
-      x.outerHTML = `<div class='span'>${x.innerHTML}</div>`;
+      x.outerHTML = `<div class='span ${x.className}'>${x.innerHTML}</div>`;
     });
   }
-
   async findWordReference(word) {
     if (!word) return null;
 
@@ -71,6 +70,7 @@ class enfr_Cambridge {
     let css = `
             <style>
             .b{font-size: 1.2em;font-weight:bold;}
+            .span{display:inline-block}
             </style>`;
 
     return css;
