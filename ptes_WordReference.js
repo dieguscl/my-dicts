@@ -41,6 +41,8 @@ class enfr_Cambridge {
   async findWordReference(word) {
     if (!word) return null;
 
+    let notes = [];
+
     let base = "https://www.wordreference.com/ptes/";
     let url = base + encodeURIComponent(word);
     let doc = "";
@@ -63,6 +65,11 @@ class enfr_Cambridge {
       definition += content.innerHTML;
     }
     let css = this.renderCSS();
+
+    notes.push({
+      css,
+      definitions: [definition],
+    });
     return definition ? css + definition : null;
   }
 
