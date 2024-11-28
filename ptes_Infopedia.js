@@ -90,10 +90,11 @@ class ptes_Infopedia {
     }
     let css = this.renderCSS();
 
+    definition += definition + audio;
     notes.push({
       css,
       definitions: [definition],
-      audio,
+      //audio,
     });
     return notes;
   }
