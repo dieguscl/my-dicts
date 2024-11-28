@@ -51,8 +51,8 @@ class ptes_Infopedia {
       return null;
     }
 
-    let audioImg = doc.querySelector("#iconJS");
-    let audio = audioImg.nextElementSibling.querySelector("source").src;
+    let audioImg = doc.querySelector("#iconJs");
+    let audio = audioImg.nextElementSibling.src;
     return audio;
   }
 
