@@ -75,7 +75,7 @@ class ptes_Infopedia {
     let contents = doc.querySelectorAll(".dolEntradaVverbete") || [];
     if (contents.length == 0) return null;
 
-    let audio = findAudio(word);
+    let audio = this.findAudio(word);
 
     let definition = "";
     for (const content of contents) {
