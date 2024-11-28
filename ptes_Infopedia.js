@@ -78,7 +78,8 @@ class enfr_Cambridge {
   renderCSS() {
     let css = `
             <style>
-            .b{font-size: 1.2em;font-weight:bold;}
+            .dolCatgramTbcat{font-size: 1.1:em;font-weight:bold;}
+            .dolAcepsRightCell{margin-left: 0.2rem;display: inline-block;}
             </style>`;
 
     return css;
