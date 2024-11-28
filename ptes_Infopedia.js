@@ -57,6 +57,9 @@ class enfr_Cambridge {
     let contents = doc.querySelectorAll(".dolEntradaVverbete") || [];
     if (contents.length == 0) return null;
 
+    let audioImg = doc.querySelector(".dolLocucao");
+    let audio = audioImg.nextElementSibling.querySelector("source").src;
+
     let definition = "";
     for (const content of contents) {
       this.removeTags(content, ".dolLocucao");
@@ -69,9 +72,6 @@ class enfr_Cambridge {
       definition += content.innerHTML;
     }
     let css = this.renderCSS();
-
-    let audioImg = doc.querySelector(".dolLocucao");
-    let audio = audioImg.nextElementSibling.querySelector("source").src;
 
     notes.push({
       css,
