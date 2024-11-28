@@ -70,7 +70,7 @@ class enfr_Cambridge {
     }
     let css = this.renderCSS();
 
-    let audio = document
+    let audio = doc
       .querySelector(".dolLocucao")
       .nextElementSibling.querySelector("source").src;
 
