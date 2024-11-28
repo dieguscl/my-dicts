@@ -59,8 +59,10 @@ class enfr_Cambridge {
 
     let definition = "";
     for (const content of contents) {
-      //this.removeTags(content, ".small1");
-      //this.removeTags(content, ".supr1");
+      this.removeTags(content, ".dolLocucao");
+      this.removeTags(content, ".dolVerbeteEntrinfo");
+      this.removeTags(content, ".favorites");
+      this.removeTags(content, ".conjugar");
       this.removelinks(content);
       definition += content.innerHTML;
     }
@@ -70,7 +72,7 @@ class enfr_Cambridge {
       css,
       definitions: [definition],
     });
-    return definition ? css + definition : null;
+    return notes;
   }
 
   renderCSS() {
