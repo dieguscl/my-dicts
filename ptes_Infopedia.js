@@ -1,5 +1,5 @@
 /* global api */
-class enfr_Cambridge {
+class ptes_Infopedia {
   constructor(options) {
     this.options = options;
     this.maxexample = 2;
@@ -38,6 +38,24 @@ class enfr_Cambridge {
     //  x.outerHTML = `<div class='span ${x.className}'>${x.innerHTML}</div>`;
     //});
   }
+
+  async findAudio(word) {
+    let base = "https://www.howtopronounce.com/portuguese/";
+    let url = base + encodeURIComponent(word);
+    let doc = "";
+    try {
+      let data = await api.fetch(url);
+      let parser = new DOMParser();
+      doc = parser.parseFromString(data, "text/html");
+    } catch (err) {
+      return null;
+    }
+
+    let audioImg = doc.querySelector("#iconJS");
+    let audio = audioImg.nextElementSibling.querySelector("source").src;
+    return audio;
+  }
+
   async findWordReference(word) {
     if (!word) return null;
 
@@ -57,8 +75,7 @@ class enfr_Cambridge {
     let contents = doc.querySelectorAll(".dolEntradaVverbete") || [];
     if (contents.length == 0) return null;
 
-    let audioImg = doc.querySelector(".dolLocucao");
-    let audio = audioImg.nextElementSibling.querySelector("source").src;
+    let audio = findAudio(word);
 
     let definition = "";
     for (const content of contents) {
@@ -87,6 +104,7 @@ class enfr_Cambridge {
             .dolCatgramTbcat{font-size: 1.1:em;font-weight:bold;}
             .dolAcepsRightCell{margin-left: 0.2rem;display: inline-block;}
             .dolAcepsNum{display: inline-block;}
+            .dolAcepsRow{display: flex;}
             </style>`;
 
     return css;

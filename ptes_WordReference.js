@@ -1,5 +1,5 @@
 /* global api */
-class enfr_Cambridge {
+class ptes_WordReference {
   constructor(options) {
     this.options = options;
     this.maxexample = 2;
