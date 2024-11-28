@@ -94,7 +94,7 @@ class ptes_Infopedia {
     notes.push({
       css,
       definitions: [definition],
-      //audio,
+      audio,
     });
     return notes;
   }
