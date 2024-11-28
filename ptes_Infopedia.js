@@ -64,14 +64,20 @@ class enfr_Cambridge {
       this.removeTags(content, ".favorites");
       this.removeTags(content, ".conjugar");
       this.removeTags(content, ".dolVverbeteLexeger");
+      this.removeTags(content, "img");
       this.removelinks(content);
       definition += content.innerHTML;
     }
     let css = this.renderCSS();
 
+    let audio = document
+      .querySelector(".dolLocucao")
+      .nextElementSibling.querySelector("source").src;
+
     notes.push({
       css,
       definitions: [definition],
+      audio,
     });
     return notes;
   }
