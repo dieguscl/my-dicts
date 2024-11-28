@@ -63,6 +63,7 @@ class enfr_Cambridge {
       this.removeTags(content, ".dolVerbeteEntrinfo");
       this.removeTags(content, ".favorites");
       this.removeTags(content, ".conjugar");
+      this.removeTags(content, ".dolVverbeteLexeger");
       this.removelinks(content);
       definition += content.innerHTML;
     }
