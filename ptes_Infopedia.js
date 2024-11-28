@@ -70,9 +70,8 @@ class enfr_Cambridge {
     }
     let css = this.renderCSS();
 
-    let audio = doc
-      .querySelector(".dolLocucao")
-      .nextElementSibling.querySelector("source").src;
+    let audioImg = doc.querySelector(".dolLocucao");
+    let audio = audioImg.nextElementSibling.querySelector("source").src;
 
     notes.push({
       css,
