@@ -81,6 +81,7 @@ class enfr_Cambridge {
             <style>
             .dolCatgramTbcat{font-size: 1.1:em;font-weight:bold;}
             .dolAcepsRightCell{margin-left: 0.2rem;display: inline-block;}
+            .dolAcepsNum{display: inline-block;}
             </style>`;
 
     return css;
